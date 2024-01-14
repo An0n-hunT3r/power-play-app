@@ -3,7 +3,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 
 import Login from "./pages/Login";
-import Dasboard from "./pages/Dasboard";
+import Dashboard from "./pages/Dashboard";
 import ProductDetails from "./pages/ProductDetails";
 import isTokenValid from "./utils/isTokenValid";
 import "./App.css";
@@ -23,8 +23,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Dasboard />} />
-        <Route path="/dashboard" element={<Dasboard />} />
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/login" element={<Login />} />
       </Routes>
