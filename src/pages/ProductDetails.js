@@ -25,8 +25,12 @@ const ProductDetails = () => {
             method: "GET",
           }
         );
-        setProductDetails(data);
-        setIsLoading(false);
+        if (!data) {
+          navigate("/not-found");
+        } else {
+          setProductDetails(data);
+          setIsLoading(false);
+        }
       } catch (error) {
         console.error("Error fetching product detail:", error);
         setIsLoading(true);
@@ -34,7 +38,7 @@ const ProductDetails = () => {
     };
 
     fetchProductDetail();
-  }, [id]);
+  }, [id, navigate]);
 
   const handleAddToCart = () => {
     addToCart(
