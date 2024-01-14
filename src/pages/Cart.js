@@ -107,11 +107,12 @@ const Cart = () => {
                 >
                   Add More Items
                 </button>
-                <Link to="/checkout">
-                  <button className="bg-blue-500 text-white px-4 py-2 rounded">
-                    Buy Now
-                  </button>
-                </Link>
+                <button
+                  className="bg-gray-400 text-white px-4 py-2 rounded"
+                  disabled={true}
+                >
+                  Buy Now
+                </button>
               </div>
             </div>
           </>

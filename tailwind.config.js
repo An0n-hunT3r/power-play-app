@@ -67,6 +67,7 @@ module.exports = {
         "1/2": "50%",
         "2/3": "66.666667%",
         "3/4": "75%",
+        screen: "100vh",
       },
       aspectRatio: {
         square: [1, 1],
