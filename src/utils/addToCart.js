@@ -1,4 +1,4 @@
-const addToCart = (id, name, imageUrl, price, quantity = 1) => {
+const addToCart = (id, name, image, price, quantity = 1) => {
   const existingCartItems = JSON.parse(localStorage.getItem("cart")) || {};
 
   if (existingCartItems[id]) {
@@ -7,7 +7,7 @@ const addToCart = (id, name, imageUrl, price, quantity = 1) => {
     existingCartItems[id] = {
       id,
       name,
-      imageUrl,
+      image,
       price,
       quantity,
     };

@@ -10,11 +10,17 @@ const Page = ({ children }) => {
     localStorage.removeItem("username");
     navigate("/login");
   };
+  const handleWelcomeClick = () => {
+    navigate("/dashboard");
+  };
 
   return (
     <div className="bg-gray-100">
-      <header className="bg-white p-4 flex justify-between items-center">
-        <div className="text-gray-700 font-semibold">
+      <header className="bg-white p-4 flex justify-between items-center cursor-pointer">
+        <div
+          className="text-gray-700 font-semibold"
+          onClick={handleWelcomeClick}
+        >
           {username ? `Welcome ${username}` : "Guest user"}
         </div>
         <button className="text-blue-600" onClick={handleLogout}>
