@@ -8,6 +8,11 @@ const Cart = () => {
   const [cartItems, setCartItems] = useState({});
   const navigate = useNavigate();
 
+  /**
+   * Localstorage is intentionally used here as fakeStore APIs doesn't support cart update functionality
+   * With localstorage, the product changes are getting updated in real time
+   * Once we have backend APIs that support cart add/delete functionalit we can replace logic with that
+   */
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem("cart")) || {};
     setCartItems(storedCartItems);
@@ -47,6 +52,9 @@ const Cart = () => {
     return total.toFixed(2);
   };
 
+  /**
+   * Buy Now APIs are not present in fakeStore APIs and so the button is disabled
+   */
   return (
     <Page>
       <div className="bg-white container mx-auto p-4">
